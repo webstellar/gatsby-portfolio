@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `63wesbtudio`,
+    description: `63webstudio with Gatsby`,
+    author: `@PeterOnyegbule`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
@@ -29,6 +29,37 @@ module.exports = {
         // theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        url: `http://gatsbywp.local/graphql`,
+        develop: {
+          hardCacheMediaFiles: true,
+        },
+        schema: {
+          timeout: 100000,
+          perPage: 20, // currently set to 100
+          requestConcurrency: 5, // currently set to 15
+          previewRequestConcurrency: 2, // currently set to 5
+        },
+        type: {
+          Post: {
+            limit: 50,
+          },
+          Page: {
+            limit: 50,
+          },
+        },
+      },
+    },
+    `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`montserrat\:200, 400, 500, 600, 700`],
+        display: `swap`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
