@@ -8,7 +8,7 @@ export const useMenuQuery = () => {
           title
         }
       }
-      menu: wpMenu(name: { eq: "Primary" }) {
+      menu: wpMenu(name: { eq: "primary" }) {
         menuItems {
           nodes {
             label

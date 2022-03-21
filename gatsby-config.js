@@ -3,7 +3,7 @@ module.exports = {
     title: `63wesbtudio`,
     description: `63webstudio with Gatsby`,
     author: `@PeterOnyegbule`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    siteUrl: `https://gatsbyportfoliomaster81232.gtsb.io/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -34,7 +34,7 @@ module.exports = {
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        url: `http://gatsbywp.local/graphql`,
+        url: `https://gatsby.iclaire.com.ng/graphql`,
         develop: {
           hardCacheMediaFiles: true,
         },

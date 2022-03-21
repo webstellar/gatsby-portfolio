@@ -5,16 +5,16 @@ import { Wrapper } from "./Navigation.styles"
 const Navigation = ({ menu }) => (
   <Wrapper>
     <ul>
-      {menu.map(Primary =>
-        !Primary.parentId ? (
-          <li key={Primary.id}>
-            <Link to={Primary.id} activeClassName="nav-active">
-              {Primary.label}
-              {Primary.childItems.nodes.length !== 0 && <div>&#8964;</div>}
+      {menu.map(primary =>
+        !primary.parentId ? (
+          <li key={primary.id}>
+            <Link to={primary.id} activeClassName="nav-active">
+              {primary.label}
+              {primary.childItems.nodes.length !== 0 && <div>&#8964;</div>}
             </Link>
-            {Primary.childItems.nodes.length !== 0 ? (
+            {primary.childItems.nodes.length !== 0 ? (
               <ul>
-                {Primary.childItems.nodes.map(childItems => (
+                {primary.childItems.nodes.map(childItems => (
                   <li key={childItems.id}>
                     <Link to={childItems.url} activeClassName="nav-active">
                       {childItems.label}
